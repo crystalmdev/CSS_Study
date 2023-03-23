@@ -1,0 +1,36 @@
+미디어쿼리
+    특정 조건에 따라서 스타일을 입히고 싶을 때 사용한다.
+    보통은 모바일, 태블릿, 데스크톱을 기준으로 중단점을 설정한다
+
+
+트랜지션과 애니메이션
+transform 속성
+    변형함수()
+    ex) transform:translate(50px, 10px);
+
+2차원 변형함수
+    요소이동
+        translate(x, y) --> 지정한만큼 x축 y축 이동
+        translateX(x) --> 지정한 만큼 x축 이동
+        translateY(y) --> 지정한 만큼 y축 이동
+
+    확대 및 축소
+        scale(x, y)     지정한 만큼 x,y축 확대 및 축소
+        scale(x)
+        scale(y)
+
+    비틀기
+        skew(x, y)
+        skew(x)
+        skew(y)
+    
+    회전
+        rotate(x, y, 각도)
+
+
+3차원 변형함수
+    translate3d(x, y, z)
+    translateZ(z)
+    scale3d(x, y, z)
+    scaleZ(z)
+    rotate3d(x, y, z, 각도)

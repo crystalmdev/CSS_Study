@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - 로그인 또는 가입</title>
+    <link rel="stylesheet" href="../css/ex3_register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="../images/facebook-logo.svg" alt="페이스북 로고">
+        </div>
+        <div class="card">
+            <div class="header">
+                <h2>새 계정 만들기</h2>
+                <p>빠르고 쉽습니다</p>
+            </div>
+            <div class="body">
+                <form action="">
+                    <div class="in-name">
+                        <div><input type="text" name="lastname" placeholder="성(成)"/></div>
+                        <div><input type="text" name="firstname" placeholder="이름(성은 제외)"/></div>
+                    </div>
+                    <!-- 휴대폰 및 비밀번호 폼 요소 -->
+                    <div class="in-info">
+                        <div><input type="text" name="reg_email" placeholder="휴대폰 번호 또는 이메일"/></div>
+                        <div><input type="password" name="reg_pass" placeholder="새 비밀번호"/></div>
+                    </div>
+                    <!-- 생년월일 -->
+                    <div class="in-age">
+                        <div class="text">생일</div>
+                        <div>
+                            <select name="birthday_year" id="birthday_year" title="연도">
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                            </select>
+                            <select name="birthday_month" id="birthday_month" title="월">
+                                <option value="1">1월</option>
+                                <option value="2">2월</option>
+                                <option value="3">3월</option>
+                                <option value="12">12월</option>
+                            </select>
+                            <select name="birthday_day" id="birthday_day" title="일">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="31">31</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- 성별 시작-->
+                    <div class="in-type">
+                        <div class="text">성별</div>
+                        <div>
+                            <div class="in-rdo">
+                                <label for="rdo-1">여성</label>
+                                <input type="radio" name="sex" id="rdo-1" value="1"/>
+                            </div>
+                            <div class="in-rdo">
+                                <label for="rdo-2">남성</label>
+                                <input type="radio" name="sex" id="rdo-2" value="2"/>
+                            </div>
+                            <div class="in-rdo">
+                                <label for="rdo-3">개인 지정</label>
+                                <input type="radio" name="sex" id="rdo-3" value="3"/>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 성별 끝 -->
+                    <!-- 가이드 시작 -->
+                    <div class="guide">
+                        가입하기 버튼을 클릭하면 Facebook의 약관, 데이터 정책
+                        및 쿠키 정책에 동의하게 됩니다. Facebook으로부터 SMS 알림을
+                        받을 수 있으며 알림은 언제든지 옵트 아웃할 수 있습니다.
+                    </div>
+                    <!-- 가이드 끝-->
+                    <div class="regist">
+                        <button>가입하기</button>
+                    </div>
+                    <div class="login">
+                        <a href="./ex1_index.html">이미 계정이 있으신가요?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

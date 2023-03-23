@@ -1,0 +1,113 @@
+https://d2.naver.com/helloworld/8540176
+
+flex를 활용한 레이아웃 구성하기
+
+grid레이아웃
+    일종의 표 형태로 웹을 디자인
+    컬럼 : 세로줄(열)
+    로우 : 가로줄(행)
+
+그리드컨테이너
+    그리드 요소들이 들어있는 컨테이너
+    display : grid;
+
+    grid-template-columns
+        열의 갯수 및 너비, fr(fraction 비율), 절댓값으로 설정도 가능하며
+        각각을 띄어쓰기로 구분하여 작성 ex) 1fr 2fr 1fr
+    gird-template-rows
+        행의 갯수 및 높이, fr 혹은 절댓값으로 설정 가능하며 
+        각각을 띄어쓰기로 구분하여 작성
+
+    경계선을 기준으로 숫자를 부여하여 사용한다(3행-->줄 갯수는 4)
+
+    column-gap
+        컬럼 간 간격
+    row-gap
+        행 간 간격
+    gap
+        컬럼, 행 간 간격 동시 설정
+
+    grid-template-areas
+        그리드 항목의 이름으로 그리드 구역을 지정할 수 있다
+
+그리드항목(grid item)에 적용하는 속성
+    그리드 병합 속성
+        grid-column-start
+            컬럼시작 라인 번호
+        grid-column-end
+            컬럼끝 라인 번호
+        grid-column
+            컬럼 시작과 끝 라인 번호, 슬래시로 구분하여 사용 
+        
+        grid-row-start
+            로우시작 라인 번호
+        grid-row-end
+            로우끝 라인 번호
+        grid-row
+            로우 시작과 끝 라인 번호, 슬래시로 구분하여 사용
+    
+    grid-area
+        그리드 항목 요소를 구분하기위해 이름을 붙여 사용하는 용도
+        ex) grid-area:a; --> 해당 항목은 a라는 이름이 붙은 그리드 항목
+        
+float
+    사용추세는 점점 줄어들고 있다
+    인터넷 익스플로러가 공식적으로 종료됨에 따라서 flexible layout과 grid layout이
+    동작하지 않는 브라우저가 줄고 있고, 이에 따라 점점 줄고 있다
+
+    요소를 띄어주는 속성, 
+    left : 왼쪽으로 띄어준다 
+    right : 오른쪽으로 띄어준다
+
+    만일 float속성이 적용된 요소 다음에 요소가 있다면 그 요소는 
+    바닥에 붙어있기 때문에 float된 요소들이 위쪽으로 겹치게 된다
+    이를 해제하고 싶다면 clear 속성에다가 left 혹은 right 혹은 both 값을 주면된다
+
+
+크로싱 브라우저
+    모든 브라우저에서 웹에 접속 했을 때도 동일한 경험을 할 수 있도록 만드는 방법론
+----------------------------------------------------------------------
+미디어쿼리(media query)
+    반응형 웹사이트를 구현하기 위해 사용되는 문법
+    width, height, color ... css 속성이 적용되는 범위를
+    미디어쿼리 문법을 통해서 조절할 수 있다
+    컨텐츠(문서의 구조 html)는 건들지 않고도 스타일만 바꾸어서 알맞은 형태로
+    조절이 가능하다
+
+@media [only 혹은 not] 미디어유형 [and 조건] [and 조건] ....
+
+미디어유형
+    all         모등 장치에서 적용
+    print       인쇄 장치에서 적용
+    screen      컴퓨터 및 스마트폰 스크린 미디어에서 적용
+    tv          음성, 영상이 포함된 tv 미디어 에서 적용
+    aural       음성 합성 미디어에서
+    braille     점자표현 미디어에서
+    handheld    손에 들고다니는 미디어
+    projection  프로젝터를 위한 미디어
+    tty         디스플레이 기능이 제한된 미디어
+    embossed    점자 프린터에서 사용할 css
+
+조건
+    width, height
+        웹페이지 상의 가로길이 세로길이
+    min-width, min-height
+        웹페이지 상의 최소 가로길이 세로길이
+    max-width, max-height
+        웹페이지 상의 최대 가로길이 세로길이 
+
+    물리적인 단말기의 가로 세로로 설정
+    device-width, device-height
+    min-device-width, min-device-height
+    max-device-width, max-device-height
+
+ex)
+    @media screen and (min-width:1024px) and (max-width:2000px){
+        div{
+            background-color:red;
+        }
+    }
+
+모바일 min-width : 320px(portrait모드), 480px(landscape모드)
+태블릿 min-width : 768px(portrait모드), 데스크톱하고 통일(landscape모드/1024px)
+데스크톱 min-width:1204px

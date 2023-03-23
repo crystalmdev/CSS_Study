@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 속성</title>
+    <style>
+        div{
+            border: 3px dotted black;
+            text-align: center;
+        }
+        div:nth-of-type(1){
+            background-color: aqua;
+            float: left;
+            width: 50px;
+        }
+        div:nth-of-type(2){
+            background-color: beige;
+            height: 150px;
+            width: 150px;
+            float: left;
+        }
+        div:nth-of-type(3){
+            background-color: blueviolet;
+            height: 170px;
+            width: 170px;
+            float: right;
+        }
+        div:nth-of-type(4){
+            height: 700px;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <h2>float 속성</h2>
+    <div><h1>1</h1></div>
+    <div><h1>2</h1></div>
+    <div><h1>3</h1></div>
+    <div>실질적인 내용 부분!</div>
+</body>
+</html>

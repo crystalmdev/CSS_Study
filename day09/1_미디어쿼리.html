@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 쿼리</title>
+    <style>
+        h2, p{
+            text-align: center;
+        }
+        div{
+            display: inline-block;
+            border: 3px solid black;
+            width: 200px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        @media screen and (min-width: 768px) and (max-width: 900px) {
+            div {
+                background-color: aquamarine;
+                border: 1px dotted red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>미디어 쿼리</h1>
+    <p>특정 조건에 따라서 다른 스타일을 입히고 싶을 때 사용합니다.</p>
+    <div><h1>div1</h1></div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+박스 모델
+    모든 HTML 요소는 네모난 박스 모양 (사각형)으로 구성되어있다
+    박스 모델은 HTML 요소를 내용, 패딩, 테두리, 마진으로 구분함
+
+패딩
+    박스 모델의 내용과 테두리 사이의 간격 (안쪽 여백)
+
+마진
+    테두리에서부터 바깥쪽으로의 간격 (바깥 여백)
+
+    ex. 
+    argin / padding : a b c d (위, 오른쪽, 아래, 왼쪽) - 시계방향
+                    : a b c (위, 아래, 양옆)
+                    : a b (위아래, 양옆)
+                    : a (전 방향)
+
+    패딩을 아래 쪽에만 주고 싶다면
+
+    padding : 0 16px 0 32px;
+    padding : 0 24px;
+    margin : 24px;
+
+    패딩을 아래쪽에만 주고 싶다면
+
+    padding: 0 0 16px 0;
+    padding-bottom: 16px;
+
+    방향 선택 가능
+    top, right, bottom, left
+
+---------------------------------------------------------------------
+
+    박스사이징
+
+        ex. width: 300px; height: 200px;
+        div:padding: 20px;
+
+        => 크기
+        패딩만큼 크기가 늘어나는 것은
+        정확한 크기를 줘야하는 html요소에 시각적 효과를 줄 때 방해가 된다
+
+    
+    width, height를 부여할 때
+    padding이나 border 영역은 포함하지 않는 속성
+
+        box-sizing : content-box;
+            default value(기본값), width, height를 포함하지 않고 넓이를 계산
+
+        box-sizing : border-box
+            width와 height에 padding, border를 포함하여 계산
+
+            (300px일 경우 padding이나 border 상관없이 300px을 유지)
+
+-------------------------------------------------------------------------
+
+테두리
+    테두리
+        border-width : 테두리 굵기
+        border-color : 테두리 색상
+        border-style : 테두리의 타입 (실선 Solid, dotted, dashed)
+
+        border : 굵기 스타일 색상
+        ex. 1px solid #ooo
+
+    둥근 테두리
+        border-radius
+                top-left-x, top-right-x, bottom-right-x bottom-left-x
+                / top-left-y, top-right-y, bottom-right-y bottom-left-y
+
+        대각선 위치 값이 같을 때
+                top-left-x top-right-x 
+                / top-left-y, top-right-y
+
+        네 방향
+                top-lfet top-right bottom-right bottom-left
+
+                ex. border-radius : 8px 8px 8px 8px
+
+        모든 방향
+                ex. border-radius : 8px
+
+--------------------------------------------------------------------
+
+테이블 테두리
+    테이블 셀들 간의 공백을 어떻게 처리할지 결정하는 속성
+    ex. border-collapse: collapse(합침)
+
+    기본 값은 seperate(분리)
+
+디스플레이
+
+    웹 페이지의 요소가 어떤 형태로 보이게 될지 결정하는 속성
+
+    block : 새로운 라인에서 시작, 해당 라인의 모든 너비를 차지
+            부여한 높이 값만큼 한 줄을 가득 채운다
+            높이를 지정하지 않으면 안에 있는 내용물의 크기만큼 높이를 차지
+    
+    inline : 새로운 라인에서 시작되지 않고, 앞의 요소에 이어서 배치
+            * 안의 컨텐츠 만큼 크기를 차지
+            width, height가 적용되지 않는다는 말
+
+    inline-block : block과 inline을 모두 가지고 있는 속성
+                    inline이랑 비슷
+                    width와 height 부여가 가능
+
+    none : 웹페이지 (렌더링 트리)에서 요소가 사라짐
+
+
+    flex, grid => 플렉시블 레이아웃, 그리드 레이아웃
+                    모던 css 레이아웃
+                    수평, 수직, 위치
+
+--------------------------------------------------------------------
+
+*다음주
+    포지션
+
+    플렉시블 레이아웃
+
+    그리드 레이아웃
+
+--------------------------------------------------------------------
+
+***미디어 쿼리(컨테이너), 트랜스폼, 애니메이션, 트랜지션, 퍼블리싱페이지

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상요소선택자</title>
+    <style>
+        [type='text']{
+            color: red;
+            text-align: center;
+        }
+        [type='text']::placeholder {
+            color: red;
+        }
+        [type='text']:focus {
+            background-color: black;;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        [href]:visited {
+            color: green;
+            text-decoration: none;
+        }
+  
+        /* 버튼에 호버를 가장 많이 사용함 마우스를 올렸을 때 색깔 바뀜*/
+        [href]:hover {
+            color: blueviolet;
+        }
+
+        ul > li {
+            list-style: none;
+        }
+       
+        ul > li::after {
+            content: '|';
+        }
+       
+        ul > li:last-child::after {
+            content: ' ';
+        }
+
+    </style>
+</head>
+<body>
+    <h2>가상요소선택자</h2>
+    <input type="text" placeholder="텍스트를 입력해주세요" />
+    <a href="https://www.naver.com">네이버로 이동</a>
+    <ul>
+        <li>로그인</li>
+        <li>회원가입</li>
+    </ul>
+</body>
+</html>

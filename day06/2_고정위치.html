@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고정위치</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            width: 100%;
+            height: 80px;
+            background-color: rgb(255, 255, 116);
+            position: fixed;
+        }
+        /* 해결 방법?
+        main에 header의 높이 만큼 padding top
+        */
+
+        main {
+            padding-top: 80px;
+            height: 200vh;
+        }
+
+        aside {
+            width: 100px;
+            height: 500px;
+            background-color: #d9d9d9;
+            opacity: 0.7;
+            top: 30%;
+            right: 5%;
+            position: fixed;
+        }
+
+        .model-background {
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            width: 100%;
+            /* opacity: 0.7; */
+            /* opacity 쓰면 안되는 이유 - 해당 속성 적용 요소의 자식들도 콘텐츠도 모두 투명화 */
+            height: 100vh;
+            z-index: 1; 
+            /* 기본값은 0 / 숫자가 높을수록 겹치는 요소(우선순위가 같은 요소)와
+            비교하여 해당 요소가 가장 위로 올라온다 / 단위를 1로 주지는 않음 100이나 1000단위 */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="model-background">
+        <div style="background-color: #00f; width: 200px; height: 200px;"></div>
+    </div>
+    <header></header>
+    <aside></aside>
+    <main>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi saepe molestiae repellat at, in voluptatem ad sapiente, praesentium ipsa officiis adipisci, obcaecati aut illo doloremque. Sed tenetur quos beatae dolorem.</main>
+    <footer></footer>
+</body>
+</html>

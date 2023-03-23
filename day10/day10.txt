@@ -1,0 +1,80 @@
+CSS 변형
+    perspectives 원근감 (syntax 참고)
+        값이 작을수록 원근감이 크게 느껴진다
+        속성 값은 1개, none : 없음, 기본값
+        길이 값(px, em, %,...)
+        ex) perspective:100px;
+        ex) perspective:3.5em;
+
+    transform orgin 기준 좌표
+        속성값 1개
+        ex) transform-origin: 2px;
+        ex) transform-origin: bottom;
+        
+        속성값 2개 : X-offset | y-offset
+        ex) transform-origin: 2px 3cm; (x는 2px, y는 3cm)
+        ex) transform-origin: left 2px;
+
+        속성값 3개 : x-offset | y-offset | z-offset
+        ex) transform-origin: 3px 30% 10px;
+
+    vendor prefix
+        주요 웹브라우저 공급자가 새로운 실험적인 기능을 제공할 때
+        이전 버전의 웹브라우저에게 그 사실을 알리기 위해 사용하는 접두사
+
+        -webkit- 크롬, 사파리
+        -moz- 파이어폭스
+        -o- 오페라
+        -ms- 엣지(Internet Explorer)
+
+    transition
+        스타일 속성들이 시간에 따라 서서히 변화할 수 있도록 한다
+
+    transition-property
+        트렌지션의 대상
+        all, none, 혹은 적용시킬 속성명(여러개라면 콤마로 나열)
+    transition-duration
+        트렌지션 지속 시간
+        s(초) 혹은 ms(밀리초)
+        1000ms=1s
+    transition-timing-function
+        트렌지션 실행 형태
+        키워드(ease, linear, ...) 혹은 함수
+    transition-delay
+        트렌지션 지연 시간
+        s 혹은 ms
+
+    transition
+        단축속성, 순서는 상관없음 (단 초가 두번 쓰이면 앞이 duration, 뒤가 delay)
+        ex) transition: linear 3s width 500ms
+
+    svg
+        특정 도형이나 점, 선, 면에 대한 정보들을 좌표값으로 나타낸 파일
+        확대나 축소, 색변경 시에 도형에 대한 정보들이 다 들어있으므로 
+        화질이 깨지지 않고 사용이 가능하다..
+
+        viewbox
+            svg 요소를 보여줄 뷰포트를 설정하는 행위
+            viewBox = "좌측상단x 좌측상단y 가로좌표길이dx 세로좌표길이dy"
+            가로좌표, 세로좌표는 픽셀과는 상관없는 상대적인 값,
+            (0 0 620 140) 앞 x y 는 절대 좌표 dx, dy는 상대좌표
+            x, y값을 기준으로 위치를 잡는다.
+            dx만큼 x축으로 상대적으로 위치 이동, 
+            dy값 만큼 y축으로 상대적으로 위치 이동
+
+        viewBox의 크기값
+            min-x, min-y width height
+            픽셀 단위가 기준이 아닌
+            보여져야 하는 영역을 설정하는 속성
+
+        width, height 속성은 svg 태그 자체가 차지해야하는 영역
+         width, height는 실질적인 px 단위로 설정이 되고,
+         svg요소가 그 속에서 좌표에 따라 이동이 되어야 하는데
+         그 좌표를 설정하는 것이 viewBox
+
+    text 태그
+        svg 태그 안에서 사용하며 해당 글자를 마치 이미지처럼 만들어준다
+        x : viewBox에 의해 설정된 좌표에서 절대적으로 x만큼 이동
+        y : viewBox에 의해 설정된 좌표에서 절대적으로 y만큼 이동
+        dx : viewBox에 의해 설정된 현재위치 기준으로 상대적으로 dx만큼 이동
+        dy : viewBox에 의해 설정된 현재위치 기준으로 상대적으로 dy만큼 이동

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드 레이아웃</title>
+    <style>
+        body > div.container:first-of-type{
+            background-color: #e9e9e9;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 1fr 2fr 1fr;
+            /* gap: 10px; */
+            column-gap: 20px;
+            row-gap: 10px;
+        }
+        body > div.container > div{
+            border: 2px solid black;
+        }
+        body > div.container:first-of-type > .box1{
+            /* 
+            grid-column-start:1;
+            grid-column-end:4;
+            */
+            grid-column: 1/4;
+        }
+        body > div.container:first-of-type > .box2{
+            grid-row: 2/4;
+        }
+        body > div.container:first-of-type > .box3{
+            grid-column: 2/4;
+        }
+        body > div.container:first-of-type > .box4{
+            grid-column:3/4;
+        }
+
+        /* 두번째 div container */
+        body > div.container:last-of-type{
+            background-color: #e9e9e9;
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 2fr;
+
+            grid-template-areas: 
+            "a a b"
+            "c c b"
+            "d . .";
+        }
+
+        body > div.container:last-of-type > .box1{
+            grid-area: a;
+        }
+        body > div.container:last-of-type > .box2{
+            grid-area: b;
+        }
+        body > div.container:last-of-type > .box3{
+            grid-area: c;
+        }
+        body > div.container:last-of-type > .box4{
+            grid-area: d;
+        }
+    </style>
+</head>
+<body>
+    <h2>행번호 줄번로 구역 지정</h2>
+    <div class="container">
+        <div class="box1"><h2>1</h2></div>
+        <div class="box2"><h2>2</h2></div>
+        <div class="box3"><h2>3</h2></div>
+        <div class="box4"><h2>4</h2></div>
+    </div>
+    <h2>구역에 이름을 붙여서 직접 지정</h2>
+    <div class="container">
+        <div class="box1"><h2>1</h2></div>
+        <div class="box2"><h2>2</h2></div>
+        <div class="box3"><h2>3</h2></div>
+        <div class="box4"><h2>4</h2></div>
+    </div>
+</body>
+</html>

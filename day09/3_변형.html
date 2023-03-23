@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변형함수</title>
+    <style>
+        div{
+            border: 3px solid black;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+        }
+        div:nth-child(1):hover{
+            transform: translate(70px, 30px);
+            background-color: rgba(50, 60, 73, 0.7);
+        }
+        div:nth-child(2):hover{
+            background-color: aqua;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div>div1</div>
+    <div>div2</div>
+</body>
+</html>

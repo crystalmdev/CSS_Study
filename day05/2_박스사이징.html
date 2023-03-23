@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>박스사이징</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        width: 100vw;
+        /* 100vw의 크기는 사용자가 보는 화면 크기
+          100vw 가로 스크롤은 세로 스크롤 길이 생기면 같이 생김*/
+        height: 100px;
+        padding: 0 20px;
+        background-color: green;
+        box-sizing: border-box;
+      }
+
+      div {
+        width: 300px;
+        height: 150px;
+        border: 10px solid #f00;
+        margin: 10px;
+        padding: 30px;
+      }
+
+      .bs1 {
+        box-sizing: content-box;
+        /* 테두리, 패딩 계산 해서 30+10 = 40px 늘어남 */
+      }
+
+      .bs2 {
+        width: 380px;
+      }
+
+      /* box sixing: border-box일 경우
+      padding과 border을 포함한 width의 값이
+      해당요소의 주어진 width 값과 일치한다. */
+
+      /* padding은 보통 콘텐츠 이동할때 사용, 마진은 이웃or 부모요소 간 거리조정때 사용 */
+      input {
+        margin: 10px;
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <div class="bs1"></div>
+    <div class="bs2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro omnis
+      blanditiis in alias odit. Non molestiae maiores explicabo rem! Odit,
+      placeat quas. Perferendis distinctio obcaecati minus beatae similique
+      totam hic.
+    </div>
+    <input type="text" placeholder="입력" />
+  </body>
+</html>
